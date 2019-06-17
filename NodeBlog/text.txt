@@ -1,0 +1,29 @@
+NODE:
+
+√ bcrypt:  npm install bcrypt
+bcrypt tiene dos funciones: 1-hash ; 2- compare un texto plano con una codificada en la base de datos
+
+JSON Web Token for node.js:
+√ npm install jwt-simple
+
+Parse, validate, manipulate, and display dates
+√ npm install moment
+
+√ npm install express-validator 
+const { check, validationResult } = require('express-validator/check')
+
+√ npm install cors
+
+√ npm install mongoose validator
+
+
+Ver:
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs
+
+Todo:
+https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/
+
+https://www.npmjs.com/package/express-session
+
+https://www.npmjs.com/package/node-session

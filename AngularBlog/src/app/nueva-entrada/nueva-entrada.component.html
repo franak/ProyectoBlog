@@ -1,0 +1,42 @@
+<nav class="nav navbar">
+  <h2>
+    Fomulario Model
+  </h2>
+</nav>
+<!-- form>(.form-group>label+input:text.form-control)*5 -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2 col-12">
+      <form [formGroup]="formNuevaEntrada" (ngSubmit)="onSubmit()">
+        <div class="form-group"><label>Titulo</label>
+          <input type="text" class="form-control" formControlName="titulo">
+        </div>
+        <!-- {{formNuevaEntrada.controls['titulo'].errors | json}} -->
+        <span class="text-danger mb-3"
+          *ngIf="formNuevaEntrada.controls['titulo'].errors?.required && formNuevaEntrada.controls['titulo'].touched">
+          El campo titulo es obligatorio 😳
+        </span>
+        <div class="form-group"><label>Contenido</label>
+          <textarea class="form-control" cols="30" rows="10" formControlName="contenido"></textarea>
+        </div>
+        <span class="text-danger mb-3"
+          *ngIf="formNuevaEntrada.controls['contenido'].errors?.required && formNuevaEntrada.controls['contenido'].touched">
+          El contenido es obligatorio 😳
+        </span>
+
+        <p class="lead">
+          <label>Categoría</label>
+          <select name="categories" id="input" class="form-control" formControlName="categoria">
+            <option *ngFor="let cat of categorias;let i =index;" [value]="cat._id">
+              {{cat.titulo}}</option>
+          </select>
+
+        </p>
+        <!-- Lo quito para poder darle al botón sin más -->
+        <!-- [disabled]="!formulario.valid" -->
+        <input type="submit" [disabled]="!formNuevaEntrada.valid" class="btn btn-block btn-warning" value="Guardar"
+          class="form-control">
+      </form>
+    </div>
+  </div>
+</div>
